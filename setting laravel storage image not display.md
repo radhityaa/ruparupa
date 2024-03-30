@@ -1,0 +1,4 @@
+- php artisan storage:link
+- php artisan optimize:clear
+- chmod -R 755 bootstrap/cache
+- chmod -R 755 storage

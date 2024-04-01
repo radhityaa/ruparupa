@@ -1,0 +1,6 @@
+ln -s target_path link_path
+
+
+Contoh: misalkan Anda ingin membuat symlink laravel dari folder laravel/storage/app/public ke public_html/storage gunakan syntax berikut:
+
+ln -s /home/{username_cpanel}/public_html/{folder_project}/storage/app/public /home/{username_cpanel}/public_html/{folder_project}/public/storage

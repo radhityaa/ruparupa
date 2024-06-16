@@ -1,0 +1,88 @@
+instalasi laravel (ws) socket.IO di RDP windows menggunakan laragon, ssl, domain
+
+1. Konfigurasi Virtual Host untuk Domain
+<VirtualHost *:80>
+    ServerName yourdomain.com
+    DocumentRoot "C:/laragon/www/my-project/public"
+
+    <Directory "C:/laragon/www/my-project/public">
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+</VirtualHost>
+
+<VirtualHost *:80>
+    ServerName api.yourdomain.com
+
+    ProxyRequests off
+    ProxyPass / http://127.0.0.1:3000/
+    ProxyPassReverse / http://127.0.0.1:3000/
+</VirtualHost>
+
+2. Tambahkan yourdomain.com dan api.yourdomain.com ke hosts:
+Buka file C:\Windows\System32\drivers\etc\hosts dengan teks editor sebagai Administrator.
+127.0.0.1   yourdomain.com
+127.0.0.1   api.yourdomain.com
+
+3. Aktifkan Modul Proxy di Apache
+C:\laragon\bin\apache\httpd-2.4.xx\conf
+Buka file httpd.conf dengan teks editor (sebaiknya Notepad++ atau sejenisnya).
+LoadModule proxy_module modules/mod_proxy.so
+LoadModule proxy_http_module modules/mod_proxy_http.so
+LoadModule proxy_wstunnel_module modules/mod_proxy_wstunnel.so
+
+=======================================================================================================
+
+define ROOT "C:/laragon/www/wagw/public"
+define SITE "wagw.ayasyatech.online"
+
+<VirtualHost *:80>
+    DocumentRoot "${ROOT}"
+    ServerName ${SITE}
+    ServerAlias *.${SITE}
+    
+    <Directory "${ROOT}">
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+</VirtualHost>
+
+<VirtualHost *:80>
+    ServerName api.ayasyatech.online
+
+    SSLEngine on
+    SSLCertificateFile      C:/laragon/etc/ssl/laragon.crt
+    SSLCertificateKeyFile   C:/laragon/etc/ssl/laragon.key
+
+    ProxyRequests off
+    ProxyPass /socket.io ws://127.0.0.1:3100/socket.io
+    ProxyPassReverse /socket.io ws://127.0.0.1:3100/socket.io
+
+    ProxyPass / http://127.0.0.1:3100/
+    ProxyPassReverse / http://127.0.0.1:3100/
+
+    RewriteEngine On
+    RewriteCond %{HTTP:Upgrade} =websocket [NC]
+    RewriteRule /(.*) ws://127.0.0.1:3100/$1 [P,L]
+    RewriteCond %{HTTP:Upgrade} !=websocket [NC]
+    RewriteRule /(.*) http://127.0.0.1:3100/$1 [P,L]
+</VirtualHost>
+
+
+<VirtualHost *:443>
+    DocumentRoot "${ROOT}"
+    ServerName ${SITE}
+    ServerAlias *.${SITE}
+    <Directory "${ROOT}">
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+
+    SSLEngine on
+    SSLCertificateFile      C:/laragon/etc/ssl/laragon.crt
+    SSLCertificateKeyFile   C:/laragon/etc/ssl/laragon.key
+ 
+</VirtualHost>

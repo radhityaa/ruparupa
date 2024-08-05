@@ -99,9 +99,12 @@ sudo nano /etc/mosquitto/mosquitto.conf
   ```
   sudo nano /etc/mosquitto/mosquitto.conf
   ```
+  
+  Tambahkan baris ini:
   ```
   acl_file /etc/mosquitto/aclfile
   ```
+  
   Restart Mosquitto untuk menerapkan perubahan:
   ```
   sudo systemctl restart mosquitto

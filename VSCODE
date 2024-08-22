@@ -1,0 +1,38 @@
+{
+    "security.workspace.trust.untrustedFiles": "open",
+    "explorer.confirmDelete": false,
+    "remote.SSH.remotePlatform": {
+        "10.175.13.52": "linux",
+        "172.18.10.13": "linux",
+        "10.175.12.99": "linux"
+    },
+    "security.allowedUNCHosts": [
+        "10.175.11.56"
+    ],
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.minimap.enabled": false,
+    "workbench.startupEditor": "none",
+    "editor.stickyScroll.enabled": false,
+    "editor.lineHeight": 29,
+    "editor.fontSize": 13,
+    "editor.fontFamily": "'Fira Code', 'Cascadia Code', monospace",
+    "workbench.colorTheme": "One Dark Pro Flat",
+    "workbench.iconTheme": "vscode-icons",
+    "editor.renderLineHighlight": "none",
+    "editor.matchBrackets": "near",
+    "editor.guides.indentation": false,
+    "editor.cursorBlinking": "expand",
+    "blade.format.enable": true,
+    "editor.formatOnSave": true,
+    "[blade]": {
+        "editor.defaultFormatter": "shufo.vscode-blade-formatter"
+    },
+    "workbench.tree.enableStickyScroll": false,
+    "update.showReleaseNotes": false,
+    "breadcrumbs.enabled": false,
+    "editor.inlineSuggest.showToolbar": "onHover",
+    "tabnine.experimentalAutoImports": true,
+    "bitoAI.appearance.fontSize (Match with IDE Font)": false,
+    "window.zoomLevel": -2,
+    "dart.flutterSdkPath": "E:\\RAS\\dev\\flutter"
+}

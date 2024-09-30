@@ -78,9 +78,13 @@ sudo nano /etc/mosquitto/mosquitto.conf
   allow_anonymous false
   password_file /etc/mosquitto/pwfile
   ```
-  Buat file password:
+  Buat Baru file password:
   ```
   sudo mosquitto_passwd -c /etc/mosquitto/pwfile your_username
+  ```
+  Untuk menambahkan pengguna baru ke file password yang sudah ada:
+  ```
+  sudo mosquitto_passwd /etc/mosquitto/pwfile another_username
   ```
   
 * Menambahkan kontrol akses:
@@ -99,6 +103,7 @@ sudo nano /etc/mosquitto/mosquitto.conf
     #: Mewakili semua subtopik. Contoh: topic readwrite # mengizinkan akses ke semua topik.
   
     +: Mewakili satu level topik. Contoh: topic readwrite sensors/+/temperature mengizinkan akses ke topik yang memiliki struktur seperti sensors/room1/temperature, sensors/room2/temperature, dll.
+
 
   Update file konfigurasi mosquitto.conf untuk menggunakan ACL:
   ```

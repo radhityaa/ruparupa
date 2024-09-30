@@ -95,6 +95,11 @@ sudo nano /etc/mosquitto/mosquitto.conf
   topic readwrite #
   ```
 
+  ## Penggunaan Wildcard:
+    #: Mewakili semua subtopik. Contoh: topic readwrite # mengizinkan akses ke semua topik.
+  
+    +: Mewakili satu level topik. Contoh: topic readwrite sensors/+/temperature mengizinkan akses ke topik yang memiliki struktur seperti sensors/room1/temperature, sensors/room2/temperature, dll.
+
   Update file konfigurasi mosquitto.conf untuk menggunakan ACL:
   ```
   sudo nano /etc/mosquitto/mosquitto.conf

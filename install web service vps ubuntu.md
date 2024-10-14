@@ -101,19 +101,10 @@ composer install --optimize-autoloader --no-dev
 
 # Add Permission in project laravel:
 ```
-cd storage
-```
-```
-sudo chmod -R 777 logs
-```
-```
-cd framework
-```
-```
-sudo chmod -R 777 sessions/
-```
-```
-sudo chmod -R 777 views/
+sudo chown -R www-data:www-data /var/www/<domain_path>/storage
+sudo chown -R www-data:www-data /var/www/<domain_path>/bootstrap/cache
+sudo chmod -R 775 /var/www/<domain_path>/storage
+sudo chmod -R 775 /var/www/<domain_path>/bootstrap/cache
 ```
 
 # install SSL if not used cloudflare:

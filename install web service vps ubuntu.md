@@ -112,16 +112,10 @@ sudo chmod -R 775 /var/www/<domain_path>/bootstrap/cache
 sudo apt update
 ```
 ```
-sudo apt install snapd
+sudo apt install certbot python3-certbot-nginx
 ```
 ```
-sudo snap install --classic certbot
-```
-```
-sudo ln -s /snap/bin/certbot /usr/bin/certbot
-```
-```
-sudo certbot --nginx
+sudo certbot --nginx -d example.com
 ```
 
 # Firewall UFW:

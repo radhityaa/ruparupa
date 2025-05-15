@@ -107,6 +107,28 @@ sudo chmod -R 775 /var/www/<domain_path>/storage
 sudo chmod -R 775 /var/www/<domain_path>/bootstrap/cache
 ```
 
+# Remote database
+- mariadb:
+```
+sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf
+```
+or
+- mysqld:
+```
+sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+```
+```
+bind-address = 0.0.0.0
+```
+```
+sudo systemctl restart mariadb
+```
+
+- mysqld:
+
+bind-address = 0.0.0.0
+
+
 # install SSL if not used cloudflare:
 ```
 sudo apt update

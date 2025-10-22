@@ -51,6 +51,7 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
   "workbench.editor.empty.hint": "hidden",
   "window.commandCenter": true,
+  "editor.fontLigatures": true,
 }
 
 ```

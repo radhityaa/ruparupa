@@ -1,6 +1,6 @@
-Group Telegram : https://web.telegram.org/a/#-1001342951429
-Routing Tutorial & Files : https://www.youtube.com/watch?v=17TT_v6Wx_4&t=627s
-Installing TWRP : https://www.youtube.com/watch?v=17TT_v6Wx_4&t=627s
+- Group Telegram : https://web.telegram.org/a/#-1001342951429
+- Routing Tutorial & Files : https://www.youtube.com/watch?v=17TT_v6Wx_4&t=627s
+- Installing TWRP : https://www.youtube.com/watch?v=17TT_v6Wx_4&t=627s
 
 ## Atasi Fastboot tidak terbaca di PC/Komputer
 1. Download driver https://www.magelangflasher.com/2023/03/cara-instal-twrp-poco-x3-nfc-work-semua.html

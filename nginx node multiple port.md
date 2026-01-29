@@ -1,3 +1,4 @@
+```
 # 1. Definisikan grup server (Load Balancer)
 upstream websocket_backend {
     # Secara default menggunakan metode Round Robin (bergantian)
@@ -36,3 +37,4 @@ server {
         proxy_send_timeout 300s;
     }
 }
+```

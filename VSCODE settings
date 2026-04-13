@@ -1,14 +1,6 @@
 {
     "security.workspace.trust.untrustedFiles": "open",
     "explorer.confirmDelete": false,
-    "remote.SSH.remotePlatform": {
-        "10.175.13.52": "linux",
-        "172.18.10.13": "linux",
-        "10.175.12.99": "linux"
-    },
-    "security.allowedUNCHosts": [
-        "10.175.11.56"
-    ],
     "diffEditor.ignoreTrimWhitespace": false,
     "editor.minimap.enabled": false,
     "workbench.startupEditor": "none",
@@ -31,8 +23,6 @@
     "update.showReleaseNotes": false,
     "breadcrumbs.enabled": false,
     "editor.inlineSuggest.showToolbar": "onHover",
-    "tabnine.experimentalAutoImports": true,
     "bitoAI.appearance.fontSize (Match with IDE Font)": false,
     "window.zoomLevel": -2,
-    "dart.flutterSdkPath": "E:\\RAS\\dev\\flutter"
 }
